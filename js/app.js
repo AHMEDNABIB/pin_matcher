@@ -28,3 +28,20 @@ document.getElementById("key-pad").addEventListener("click", function (e) {
 		calInput.value = newNumber;
 	}
 });
+
+document
+	.getElementById("submit-btn")
+	.addEventListener("click", function (params) {
+		const pin = document.getElementById("pin-input").value;
+		const typeNumbers = document.getElementById("typed-numbers").value;
+
+		if (pin === typeNumbers) {
+			const notifySuccess = document.getElementById("notify-success");
+
+			notifySuccess.style.display = "block";
+		} else {
+			const failError = document.getElementById("notify-fail");
+
+			failError.style.display = "block";
+		}
+	});
